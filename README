@@ -1,0 +1,4 @@
+freefem++-mode.el
+=================
+
+A major mode for editing FreeFem++ code in Emacs.
