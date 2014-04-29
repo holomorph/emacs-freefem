@@ -104,11 +104,16 @@
 
 ;; Program invocation
 
-(defvar freefem++-program "FreeFem++"
-  "Command used to execute FreeFem++. Possible values: FreeFem++,
-FreeFem++-nw, FreeFem++-mpi.  See also `freefem++-program-options'.")
+(defgroup freefem++ nil
+  "Support for the FreeFem++ language."
+  :group 'languages)
 
-(defvar freefem++-program-options "-ne"
+(defcustom freefem++-program "FreeFem++"
+  "Command used to execute FreeFem++. Possible values: FreeFem++,
+FreeFem++-nw, FreeFem++-mpi.  See also `freefem++-program-options'."
+  :group 'freefem++)
+
+(defcustom freefem++-program-options "-ne"
   "Options applied to `freefem++-program'.
 
 Options:
@@ -120,7 +125,8 @@ Options:
  -wait,           wait at the end on window
  -nw,             no ffglut, ffmedit  (=> no graphics windows)
  -ne,             no edp script output
- -cd,             Change dir to script dir")
+ -cd,             Change dir to script dir"
+  :group 'freefem++)
 
 (defvar freefem++-process
   "Process currently executing `freefem++-program'")
