@@ -1,4 +1,13 @@
 freefem++-mode.el
 =================
 
-A major mode for editing FreeFem++ code in Emacs.
+A major mode for editing FreeFem++ code in GNU Emacs.
+
+FreeFem++[0] is a partial differential equation solver. It has its own
+language. FreeFem++ scripts can solve multiphysics nonlinear systems
+in 2D and 3D.
+
+Inspired by freefem++-mode.el[1] written by J. Rafael Rodríguez Galván.
+
+[0] http://www.freefem.org/ff++/
+[1] https://raw.githubusercontent.com/cucharro/emacs/master/freefem++-mode.el

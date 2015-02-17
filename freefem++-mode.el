@@ -3,6 +3,7 @@
 ;; Copyright © 2014-2015  Mark Oteiza <mvoteiza@udel.edu>
 
 ;; Author: Mark Oteiza <mvoteiza@udel.edu>
+;;         J. Rafael Rodríguez Galván
 ;; Created: 25 Jan 2014
 ;; Version: 0.1
 ;; Keywords: languages
@@ -22,8 +23,8 @@
 
 ;;; Commentary:
 
-;; Inspired by `freefem++-mode.el' by J. Rafael Rodríguez Galván
-;; <https://github.com/cucharro/emacs/blob/master/freefem++-mode.el>
+;; Inspired by `freefem++-mode.el' by J. Rafael Rodríguez Galván.
+;; <https://raw.githubusercontent.com/cucharro/emacs/master/freefem++-mode.el>
 
 ;; FreeFem++ <http://www.freefem.org/ff++/> is a partial differential
 ;; equation solver. It has its own language. FreeFem++ scripts can
