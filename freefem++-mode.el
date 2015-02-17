@@ -194,7 +194,6 @@ Options:
 
 ;; Support for FreeFem++
 
-;;;###autoload
 (defvar freefem++-mode-syntax-table nil
   "Syntax table used in `freefem++-mode' buffers.")
 (if (or freefem++-mode-syntax-table
