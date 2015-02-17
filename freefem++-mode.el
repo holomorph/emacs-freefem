@@ -209,8 +209,7 @@ Options:
 (c-define-abbrev-table 'freefem++-mode-abbrev-table
   '(("else" "else" c-electric-continued-statement 0)
     ("while" "while" c-electric-continued-statement 0)
-    ("catch" "catch" c-electric-continued-statement 0)
-    ("finally" "finally" c-electric-continued-statement 0)))
+    ("catch" "catch" c-electric-continued-statement 0)))
 
 (defvar freefem++-mode-map ()
   "Keymap used in `freefem++-mode' buffers.")
