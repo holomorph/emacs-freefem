@@ -46,6 +46,7 @@
 ;;; Lexer-level syntax (identifiers, tokens etc).
 
 (c-lang-defconst c-symbol-chars
+  ;; No underscore or other symbols permitted in identifiers
   freefem++ c-alnum)
 
 (c-lang-defconst c-cpp-include-directives
