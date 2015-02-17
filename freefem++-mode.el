@@ -120,7 +120,7 @@ FreeFem++-nw, FreeFem++-mpi.  See also `freefem++-program-options'."
 
 Options:
  -v <level>,      level of freefem output (0--1000000)
- -fglut <path>,   the file name of save all plots (replot with ffglut command )
+ -fglut <path>,   the file name of save all plots (replot with ffglut command)
  -glut <command>, change <command> compatible with ffglut
  -gff <command>,  change <command> compatible with ffglut (with space quoting)
  -nowait,         nowait at the end on window
@@ -218,8 +218,7 @@ Options:
   ;; add bindings which are only useful for FreeFem++
   (define-key freefem++-mode-map "\C-c\C-c" 'freefem++-run-buffer)
   (define-key freefem++-mode-map "\C-c\C-i" 'freefem++-interrupt-process)
-  (define-key freefem++-mode-map "\C-c\C-k" 'freefem++-kill-process)
-  )
+  (define-key freefem++-mode-map "\C-c\C-k" 'freefem++-kill-process))
 
 (easy-menu-define freefem++-menu freefem++-mode-map "FreeFem++ Mode Commands"
   (cons "FreeFem++" (c-lang-const c-mode-menu freefem++)))
