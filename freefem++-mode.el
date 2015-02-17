@@ -75,6 +75,7 @@
               "problem" "real" "R3" "solve" "string" "varf"))
 
 (c-lang-defconst c-primitive-type-prefix-kwds
+  ;; Both here and in `c-primitive-type-kwds'
   freefem++ '("func"))
 
 (c-lang-defconst c-paren-nontype-kwds
