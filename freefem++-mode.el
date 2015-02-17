@@ -45,6 +45,9 @@
 
 ;;; Lexer-level syntax (identifiers, tokens etc).
 
+(c-lang-defconst c-symbol-chars
+  freefem++ c-alnum)
+
 (c-lang-defconst c-cpp-include-directives
   freefem++ '("include" "load"))
 
