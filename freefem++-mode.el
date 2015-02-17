@@ -5,7 +5,7 @@
 ;; Author: Mark Oteiza <mvoteiza@udel.edu>
 ;;         J. Rafael Rodríguez Galván
 ;; Created: 25 Jan 2014
-;; Version: 0.1
+;; Version: 0.2
 ;; Keywords: languages
 
 ;; This file is free software: you can redistribute it and/or modify
