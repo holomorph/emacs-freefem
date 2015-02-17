@@ -70,9 +70,12 @@
 ;; Keyword lists.
 
 (c-lang-defconst c-primitive-type-kwds
-  freefem++ '("bool" "border" "Cmatrix" "complex" "ifstream"
+  freefem++ '("bool" "border" "Cmatrix" "complex" "func" "ifstream"
               "int" "macro" "matrix" "mesh" "mesh3" "ofstream"
               "problem" "real" "R3" "solve" "string" "varf"))
+
+(c-lang-defconst c-primitive-type-prefix-kwds
+  freefem++ '("func"))
 
 (c-lang-defconst c-paren-nontype-kwds
   freefem++ '("int1d" "int2d" "int3d" "intalledges" "on"
