@@ -111,6 +111,7 @@
 (defcustom freefem++-program "FreeFem++"
   "Command used to execute FreeFem++. Possible values: FreeFem++,
 FreeFem++-nw, FreeFem++-mpi.  See also `freefem++-program-options'."
+  :type 'string
   :group 'freefem++)
 
 (defcustom freefem++-program-options "-ne"
@@ -126,6 +127,7 @@ Options:
  -nw,             no ffglut, ffmedit  (=> no graphics windows)
  -ne,             no edp script output
  -cd,             Change dir to script dir"
+  :type 'string
   :group 'freefem++)
 
 (defvar freefem++-process
@@ -233,6 +235,7 @@ initialization, then `freefem++-mode-hook'.
 
 Key bindings:
 \\{freefem++-mode-map}"
+  :group 'freefem++
   (c-initialize-cc-mode t)
   (set-syntax-table freefem++-mode-syntax-table)
   (setq local-abbrev-table freefem++-mode-abbrev-table
