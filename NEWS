@@ -1,0 +1,28 @@
+
+* Changes in 0.3
+
+** Provide `freefem++-mode' feature.
+Oops.
+
+* Changes in 0.2
+
+** Added customization group and variables.
+The variables `freefem++-program' and `freefem++-program-options' are
+now customizable through the freefem++ customization group.
+
+** More correct handling of identifier names.
+Underscores and other symbols are no longer considered part of
+identifiers.
+
+** The "func" data type now behaves correctly.
+
+* Changes in 0.1
+
+** Basic language mode for FreeFem++ code.
+Handles primitive types, some built in keywords and functions,
+and different reserved globals and constants.
+
+** Integration with compile facilities.
+Use C-c C-c to process the current buffer using the FreeFem++
+compiler.  A regular expression is registered with `compile' to help
+navigate compilation errors.
