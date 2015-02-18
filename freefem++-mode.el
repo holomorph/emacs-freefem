@@ -120,8 +120,8 @@
 ;; Program invocation
 
 (defcustom freefem++-program "FreeFem++"
-  "Command used to execute FreeFem++. Possible values: FreeFem++,
-FreeFem++-nw, FreeFem++-mpi.  See also `freefem++-program-options'."
+  "Command used to execute the FreeFem++ compiler.
+See also `freefem++-program-options'."
   :type 'string
   :group 'freefem++)
 
