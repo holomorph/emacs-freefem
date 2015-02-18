@@ -238,22 +238,22 @@ Options:
 ;;;###autoload
 (define-derived-mode freefem++-mode c++-mode "FreeFem++"
   "Major mode for editing code written in the FreeFem++ programming language.
-See http://www.freefem.org/ff++/ for more information about the FreeFem++
-language.  The hook `c-mode-common-hook' is run with no args at mode
-initialization, then `freefem++-mode-hook'.
+See http://www.freefem.org/ff++/ for more information about the
+FreeFem++ language.
+
+In addition to any hooks its parent mode might have run, this
+mode runs the hook `freefem++-mode-hook' as the final step during
+initialization.
 
 Key bindings:
 \\{freefem++-mode-map}"
   :group 'freefem++
+  :syntax-table freefem++-mode-syntax-table
+  :abbrev-table freefem++-mode-abbrev-table
   (c-initialize-cc-mode t)
-  (set-syntax-table freefem++-mode-syntax-table)
-  (setq local-abbrev-table freefem++-mode-abbrev-table
-        abbrev-mode t)
-  (use-local-map freefem++-mode-map)
   (c-init-language-vars freefem++-mode)
   (c-common-init 'freefem++-mode)
   (easy-menu-add freefem++-menu)
-  (c-run-mode-hooks 'c-mode-common-hook 'freefem++-mode-hook)
   (c-update-modeline))
 
 (provide 'freefem++-mode)
