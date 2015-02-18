@@ -5,7 +5,7 @@
 ;; Author: Mark Oteiza <mvoteiza@udel.edu>
 ;;         J. Rafael Rodríguez Galván
 ;; Created: 25 Jan 2014
-;; Version: 0.2
+;; Version: 0.3
 ;; Keywords: languages
 
 ;; This file is free software: you can redistribute it and/or modify
@@ -255,5 +255,7 @@ Key bindings:
   (easy-menu-add freefem++-menu)
   (c-run-mode-hooks 'c-mode-common-hook 'freefem++-mode-hook)
   (c-update-modeline))
+
+(provide 'freefem++-mode)
 
 ;;; freefem++-mode.el ends here
