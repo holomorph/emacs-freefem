@@ -32,6 +32,12 @@
 
 ;;; Code:
 
+(defgroup freefem++ nil
+  "Support for the FreeFem++ language."
+  :group 'languages
+  :link '(url-link "http://www.freefem.org/ff++/")
+  :prefix "freefem++-")
+
 (require 'cc-mode)
 (require 'compile)
 
@@ -112,10 +118,6 @@
 
 
 ;; Program invocation
-
-(defgroup freefem++ nil
-  "Support for the FreeFem++ language."
-  :group 'languages)
 
 (defcustom freefem++-program "FreeFem++"
   "Command used to execute FreeFem++. Possible values: FreeFem++,
