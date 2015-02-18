@@ -144,17 +144,17 @@ Options:
 (defvar freefem++-process
   "Process currently executing `freefem++-program'")
 
-(defun freefem++-interrupt-process()
+(defun freefem++-interrupt-process ()
   "Send interrupt signal to FreeFem++ process."
   (interactive)
   (interrupt-process freefem++-process))
 
-(defun freefem++-kill-process()
+(defun freefem++-kill-process ()
   "Send kill signal to FreeFem++ process."
   (interactive)
   (kill-process freefem++-process))
 
-(defun freefem++-run-buffer()
+(defun freefem++-run-buffer ()
   "Send current buffer to FreeFem++."
   (interactive)
   (save-some-buffers)
