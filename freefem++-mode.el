@@ -161,13 +161,12 @@ Options:
   "Send current buffer to FreeFem++."
   (interactive)
   (save-some-buffers)
-  (let ((freefem++-code-buffer (file-name-nondirectory buffer-file-name))
-        (compile-command (mapconcat #'identity
-                                    (cons freefem++-program
-                                          freefem++-program-options)
-                                    " ")))
-    (setq freefem++-process (compile (concat compile-command " "
-                                             freefem++-code-buffer)))))
+  (let ((file (file-name-nondirectory buffer-file-name))
+        (command (mapconcat #'identity
+                            (cons freefem++-program
+                                  freefem++-program-options)
+                            " ")))
+    (setq freefem++-process (compile (concat command " " file)))))
 
 ;; Tell compilation mode how to recognize errors in FreeFem++ output
 (add-to-list 'compilation-error-regexp-alist 'freefem++)
