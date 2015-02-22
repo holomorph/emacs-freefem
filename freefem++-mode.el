@@ -128,7 +128,7 @@ See also `freefem++-program-options'."
   :type 'string
   :group 'freefem++)
 
-(defcustom freefem++-program-options "-ne"
+(defcustom freefem++-program-options (list "-ne")
   "Options applied to `freefem++-program'.
 
 Options:
@@ -141,7 +141,7 @@ Options:
  -nw,             no ffglut, ffmedit  (=> no graphics windows)
  -ne,             no edp script output
  -cd,             Change dir to script dir"
-  :type 'string
+  :type '(repeat string)
   :group 'freefem++)
 
 (defvar freefem++-process
@@ -162,8 +162,10 @@ Options:
   (interactive)
   (save-some-buffers)
   (let ((freefem++-code-buffer (file-name-nondirectory buffer-file-name))
-        (compile-command (concat freefem++-program " "
-                                 freefem++-program-options)))
+        (compile-command (mapconcat #'identity
+                                    (cons freefem++-program
+                                          freefem++-program-options)
+                                    " ")))
     (setq freefem++-process (compile (concat compile-command " "
                                              freefem++-code-buffer)))))
 
