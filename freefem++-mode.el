@@ -1,6 +1,7 @@
 ;;; freefem++-mode.el --- Major mode for the FreeFem++ language
 
 ;; Copyright © 2014-2015  Mark Oteiza <mvoteiza@udel.edu>
+;; Copyright © 2008-2011  J. Rafael Rodríguez Galván
 
 ;; Author: Mark Oteiza <mvoteiza@udel.edu>
 ;;         J. Rafael Rodríguez Galván
