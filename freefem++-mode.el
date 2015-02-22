@@ -92,6 +92,8 @@
 
 (c-lang-defconst c-constant-kwds
   freefem++ '("true" "false" "pi"
+              ;; Reserved
+              "P" "N"
               ;; Finite elements
               "P0" "P1" "P2" "P3" "P4"
               "RT0" "RT1" "BDM1" "RT0Ortho" "RT1Ortho" "BDM1Ortho"
