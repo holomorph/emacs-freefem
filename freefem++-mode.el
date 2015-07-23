@@ -86,7 +86,7 @@
   freefem++ '("func"))
 
 (c-lang-defconst c-paren-nontype-kwds
-  freefem++ '("int1d" "int2d" "int3d" "intalledges" "on"
+  freefem++ '("int1d" "int2d" "int3d" "intalledges" "on" "jump" "mean"
               "dx" "dxx" "dxy" "dy" "dyx" "dyy" "dz"
               "interpolate" "set" "plot"))
 
@@ -96,7 +96,9 @@
               "P" "N"
               ;; Finite elements
               "P0" "P1" "P2" "P3" "P4"
-              "RT0" "RT1" "BDM1" "RT0Ortho" "RT1Ortho" "BDM1Ortho"
+              "P0VF" "P1nc" "P1dc" "P2dc"
+              "P1b" "P2b" "P2h"
+              "RT0" "RT1" "BDM1" "RT0Ortho" "RT1Ortho" "BDM1Ortho" "RTmodif"
               "P0edge" "P1edge" "P2edge" "P3edge" "P4edge" "P5edge"
               "P03d" "P13d" "P1b3d" "P23d" "RT03d" "Edge03d"
               ;; Solvers
