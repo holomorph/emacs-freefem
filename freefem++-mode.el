@@ -146,7 +146,7 @@ Options:
   :type '(repeat string)
   :group 'freefem++)
 
-(defvar freefem++-process
+(defvar-local freefem++-process nil
   "Process currently executing `freefem++-program'")
 
 (defun freefem++-kill-process ()
