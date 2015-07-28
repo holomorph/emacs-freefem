@@ -146,6 +146,13 @@ Options:
   :type '(repeat string)
   :group 'freefem++)
 
+(defcustom freefem++-run-error-regexp-alist
+  '(("^ Error line number \\([0-9]+\\), in file \\([[:alpha:]][-[:alnum:].]+\\)," 2 1))
+  "Alist that specifies how to match errors in FreeFem++ output."
+  :type 'alist
+  :link '(variable-link compilation-error-regexp-alist)
+  :group 'freefem++)
+
 (defvar-local freefem++-process nil
   "Process currently executing `freefem++-program'")
 
@@ -153,6 +160,9 @@ Options:
   "Send kill signal to FreeFem++ process."
   (interactive)
   (interrupt-process freefem++-process))
+
+(define-compilation-mode freefem++-run-mode "Compilation"
+  "Major mode for FreeFem++ compilation log buffers.")
 
 (defun freefem++-run-buffer ()
   "Send current buffer to FreeFem++."
@@ -163,12 +173,8 @@ Options:
                             (cons freefem++-program
                                   freefem++-program-options)
                             " ")))
-    (setq freefem++-process (compile (concat command " " file)))))
-
-;; Tell compilation mode how to recognize errors in FreeFem++ output
-(add-to-list 'compilation-error-regexp-alist 'freefem++)
-(add-to-list 'compilation-error-regexp-alist-alist
-  '(freefem++ "^\s*Error line number \\([0-9]+\\), in file \\([[:alpha:]][-[:alnum:].]+\\)," 2 1))
+    (setq freefem++-process (compilation-start (concat command " " file)
+                                               'freefem++-run-mode))))
 
 
 ;; Easy menu
