@@ -149,15 +149,10 @@ Options:
 (defvar freefem++-process
   "Process currently executing `freefem++-program'")
 
-(defun freefem++-interrupt-process ()
-  "Send interrupt signal to FreeFem++ process."
-  (interactive)
-  (interrupt-process freefem++-process))
-
 (defun freefem++-kill-process ()
   "Send kill signal to FreeFem++ process."
   (interactive)
-  (kill-process freefem++-process))
+  (interrupt-process freefem++-process))
 
 (defun freefem++-run-buffer ()
   "Send current buffer to FreeFem++."
@@ -182,7 +177,6 @@ Options:
   ;; The definition for the mode menu. The menu title is prepended to
   ;; this before it's fed to `easy-menu-define'.
   t `(["Process this buffer" freefem++-run-buffer t]
-      ["Interrupt FreeFem++ process" freefem++-interrupt-process t]
       ["Kill FreeFem++ process" freefem++-kill-process t]
       "---"
       ["Comment Out Region" comment-dwim
@@ -233,7 +227,6 @@ Options:
   (setq freefem++-mode-map (c-make-inherited-keymap))
   ;; add bindings which are only useful for FreeFem++
   (define-key freefem++-mode-map "\C-c\C-c" 'freefem++-run-buffer)
-  (define-key freefem++-mode-map "\C-c\C-i" 'freefem++-interrupt-process)
   (define-key freefem++-mode-map "\C-c\C-k" 'freefem++-kill-process))
 
 (easy-menu-define freefem++-menu freefem++-mode-map "FreeFem++ Mode Commands"
