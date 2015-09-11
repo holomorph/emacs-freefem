@@ -227,13 +227,13 @@ Options:
     ("while" "while" c-electric-continued-statement 0)
     ("catch" "catch" c-electric-continued-statement 0)))
 
-(defvar freefem++-mode-map ()
+(defvar freefem++-mode-map
+  (let ((map (make-sparse-keymap)))
+    (set-keymap-parent map c-mode-base-map)
+    (define-key map (kbd "C-c C-c") 'freefem++-run-buffer)
+    (define-key map (kbd "C-c C-k") 'freefem++-kill-process)
+    map)
   "Keymap used in `freefem++-mode' buffers.")
-(if freefem++-mode-map nil
-  (setq freefem++-mode-map (c-make-inherited-keymap))
-  ;; add bindings which are only useful for FreeFem++
-  (define-key freefem++-mode-map "\C-c\C-c" 'freefem++-run-buffer)
-  (define-key freefem++-mode-map "\C-c\C-k" 'freefem++-kill-process))
 
 (easy-menu-define freefem++-menu freefem++-mode-map "FreeFem++ Mode Commands"
   (cons "FreeFem++" (c-lang-const c-mode-menu freefem++)))
