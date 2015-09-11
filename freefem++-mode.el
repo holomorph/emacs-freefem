@@ -258,6 +258,7 @@ Key bindings:
   (c-init-language-vars freefem++-mode)
   (c-common-init 'freefem++-mode)
   (easy-menu-add freefem++-menu)
+  (cc-imenu-init cc-imenu-c++-generic-expression)
   (c-update-modeline))
 
 (provide 'freefem++-mode)
