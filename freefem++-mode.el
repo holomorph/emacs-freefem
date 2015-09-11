@@ -213,12 +213,12 @@ Options:
 
 ;; Support for FreeFem++
 
-(defvar freefem++-mode-syntax-table nil
+(defvar freefem++-mode-syntax-table
+  (let ((table (make-syntax-table)))
+    (set-char-table-parent table c++-mode-syntax-table)
+    (modify-syntax-entry ?' "_" table)
+    table)
   "Syntax table used in `freefem++-mode' buffers.")
-(if (or freefem++-mode-syntax-table
-        (setq freefem++-mode-syntax-table
-              (funcall (c-lang-const c-make-mode-syntax-table c))))
-    (modify-syntax-entry ?' "_" freefem++-mode-syntax-table))
 
 (defvar freefem++-mode-abbrev-table nil
   "Abbreviation table used in `freefem++-mode' buffers.")
@@ -253,7 +253,6 @@ initialization.
 Key bindings:
 \\{freefem++-mode-map}"
   :group 'freefem++
-  :syntax-table freefem++-mode-syntax-table
   :abbrev-table freefem++-mode-abbrev-table
   (c-initialize-cc-mode t)
   (c-init-language-vars freefem++-mode)
