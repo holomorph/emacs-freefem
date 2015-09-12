@@ -253,7 +253,6 @@ initialization.
 Key bindings:
 \\{freefem++-mode-map}"
   :group 'freefem++
-  :abbrev-table freefem++-mode-abbrev-table
   (c-initialize-cc-mode t)
   (c-init-language-vars freefem++-mode)
   (c-common-init 'freefem++-mode)
