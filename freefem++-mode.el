@@ -206,9 +206,9 @@ Options:
         :style toggle :selected c-auto-newline]
        ["Hungry delete" c-toggle-hungry-state
         :style toggle :selected c-hungry-delete-key]
-       ["Subword mode" c-subword-mode
-        :style toggle :selected (and (boundp 'c-subword-mode)
-                                     c-subword-mode)])))
+       ["Subword mode" subword-mode
+        :style toggle :selected (and (boundp 'subword-mode)
+                                     subword-mode)])))
 
 
 ;; Support for FreeFem++
