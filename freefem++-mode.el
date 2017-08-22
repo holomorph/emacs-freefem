@@ -1,6 +1,6 @@
 ;;; freefem++-mode.el --- Major mode for the FreeFem++ language
 
-;; Copyright © 2014-2016  Mark Oteiza <mvoteiza@udel.edu>
+;; Copyright © 2014-2017  Mark Oteiza <mvoteiza@udel.edu>
 ;; Copyright © 2008-2011  J. Rafael Rodríguez Galván
 
 ;; Author: Mark Oteiza <mvoteiza@udel.edu>
@@ -213,6 +213,12 @@ Options:
 
 ;; Support for FreeFem++
 
+(defcustom freefem++-code-style '("bsd" (c-basic-offset . 4))
+  "Specification of the \"freefem++\" style."
+  :type '(cons string (alist :key-type symbol :value-type sexp))
+  :link '(info-link "(ccmode) Style Variables")
+  :group 'freefem++)
+
 (defvar freefem++-mode-syntax-table
   (let ((table (make-syntax-table)))
     (set-char-table-parent table c++-mode-syntax-table)
@@ -257,6 +263,11 @@ Key bindings:
   (c-init-language-vars freefem++-mode)
   (c-common-init 'freefem++-mode)
   (easy-menu-add freefem++-menu)
+  (c-add-style "freefem++" freefem++-code-style)
+  (unless (or c-file-style
+              (stringp c-default-style)
+              (assq 'freefem++-mode c-default-style))
+    (c-set-style "freefem++" t))
   (cc-imenu-init cc-imenu-c++-generic-expression)
   (c-update-modeline))
 
